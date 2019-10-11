@@ -43,5 +43,12 @@ export default new Router({
       name: 'q7',
       component: () => import(/* webpackChunkName: "sent" */ '@/components/pages/Q7')
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
